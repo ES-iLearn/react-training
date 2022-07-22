@@ -2,6 +2,8 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import ErrMsg from "./ErrorMsg";
+import NewComp from "./NewComp";
+import StateDemo from "./StateDemo";
 
 function App() {
   const name = "John McClane";
@@ -10,12 +12,29 @@ function App() {
   let invalid = false;
   let errMsg = invalid && <h1 className="invalid">Error message</h1>;
 
+  const bugs = [
+    {title: 'Bug 1', status: 'new'},
+    {title: 'Bug 2', status: 'new'},
+    {title: 'Bug 3', status: 'new'},
+  ];
+
+  function newChangeHandler() {
+    console.log("Change triggered in App.tsx")
+  }
+
+
   return (
     <div className="App">
+
+      <StateDemo></StateDemo>
+
+<hr />
       {greetings}
       <h2 style={blueStyle}>Hello</h2>
+      <h2 className="yellowBg">Yellow From App </h2>
       {errMsg}
-      <ErrMsg message="Sample message" className="invalid"></ErrMsg>
+      <ErrMsg message="Sample message"></ErrMsg>
+      <NewComp bugs={bugs} changeHandler={newChangeHandler}></NewComp>
     </div>
   );
 
