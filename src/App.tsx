@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import ErrMsg from "./ErrorMsg";
 import NewComp from "./NewComp";
