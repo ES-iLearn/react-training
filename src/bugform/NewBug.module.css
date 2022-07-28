@@ -1,0 +1,15 @@
+.addNewBtn {
+    padding: 1em;
+    background-color: #02024f;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.bugtitle {
+    padding: 1em;
+    font-size: 1em;
+    margin-right: 10px;
+    width: 300px;
+} 
