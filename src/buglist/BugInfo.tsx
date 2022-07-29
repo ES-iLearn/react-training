@@ -3,12 +3,14 @@ import { BugData, BugStatus } from "../BugsData";
 import DateCard from "../ui/DateCard";
 import styles from "./BugInfo.module.css";
 
+export type DeleteBugInfo = (id: number) => void;
+
 interface BugInfoProps {
   bug: BugData;
+  deleteBug: DeleteBugInfo;
 }
 
 const BugInfo: FunctionComponent<BugInfoProps> = (props) => {
-
   const getStatusText = (status: BugStatus) => {
     switch (status) {
       case BugStatus.reported:
@@ -31,9 +33,16 @@ const BugInfo: FunctionComponent<BugInfoProps> = (props) => {
   return (
     <li className={styles.buginfo}>
       <DateCard date={props.bug.created}></DateCard>
-      <h2>{props.bug.title}</h2>
+      <h2 className={styles.bugtitle}>{props.bug.title}</h2>
       <h2 style={{ color: bugStausInfo.color }}>{bugStausInfo.text}</h2>
-      <button className={styles.deleteButton}>❌</button>
+      <button
+        className={styles.deleteButton}
+        onClick={() => {
+          props.deleteBug(props.bug.id);
+        }}
+      >
+        ❌
+      </button>
     </li>
   );
 };

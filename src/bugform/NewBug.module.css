@@ -1,3 +1,8 @@
+.bugform {
+    border-bottom: 1px solid #cecece;
+    padding: 0.5rem;
+}
+
 .addNewBtn {
     padding: 1em;
     background-color: #02024f;
