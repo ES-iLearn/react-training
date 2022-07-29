@@ -17,6 +17,8 @@ const NewBug: FunctionComponent<NewBugProps> = (props) => {
 
   const addBug = () => {
     props.bugAdded(title)
+    setTitle('');
+    setEditMode(false);
   }
 
   const titleChanged = (e: any) => {

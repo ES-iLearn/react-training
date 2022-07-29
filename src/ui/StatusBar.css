@@ -1,0 +1,8 @@
+.statusbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.statusbarItem {
+    height: 10px;
+}

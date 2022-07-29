@@ -33,6 +33,7 @@ const BugInfo: FunctionComponent<BugInfoProps> = (props) => {
       <DateCard date={props.bug.created}></DateCard>
       <h2>{props.bug.title}</h2>
       <h2 style={{ color: bugStausInfo.color }}>{bugStausInfo.text}</h2>
+      <button className={styles.deleteButton}>❌</button>
     </li>
   );
 };

@@ -1,24 +1,27 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import NewBug from "../bugform/NewBug";
-import bugs, { BugData } from "../BugsData";
+import { BugData, BugStatus } from "../BugsData";
 import BugInfo from "./BugInfo";
 import styles from './BugList.module.css';
 
-interface BugListProps {}
+interface BugListProps {
+  bugs: BugData[];
+  addNewBug: Function;
+}
 
-const BugList: FunctionComponent<BugListProps> = () => {
+const BugList: FunctionComponent<BugListProps> = (props) => {
 
-  const addNewBug = (title: string) => {
-    console.log('New bug added: ', title)
+  const addNewBug = (title :any) => {
+    props.addNewBug(title);
   }
 
 
   return (
     <div className={styles.buglist}>
       <NewBug bugAdded={addNewBug}></NewBug>
-      <ul>
-        {bugs.map((b: BugData) => {
-          return <BugInfo bug={b}></BugInfo>;
+      <ul className={styles.bugsul}>
+        {props.bugs.map((b: BugData) => {
+          return <BugInfo bug={b} key={b.id}></BugInfo>;
         })}
       </ul>
     </div>
