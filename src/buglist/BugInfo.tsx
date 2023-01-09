@@ -16,7 +16,7 @@ const BugInfo: FunctionComponent<BugInfoProps> = (props) => {
       case BugStatus.reported:
         return { text: "Reported", color: "red" };
       case BugStatus.indev:
-        return { text: "Developed", color: "blue" };
+        return { text: "In Progress", color: "blue" };
       case BugStatus.inqa:
         return { text: "In Testing", color: "purple" };
       case BugStatus.resolved:

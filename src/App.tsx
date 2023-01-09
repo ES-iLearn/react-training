@@ -3,6 +3,7 @@ import "./App.css";
 import BugList from "./buglist/BugList";
 import Header from "./ui/Header";
 import bugs, { BugData, BugStatus } from "./BugsData";
+import Demo from "./DemoComponent";
 
 function App() {
   const [bugList, updateBugList] = useState(bugs);
@@ -32,6 +33,7 @@ function App() {
         addNewBug={addNewBug}
         deleteBug={deleteBug}
       ></BugList>
+      <Demo title="demo title" styleName=""></Demo>
     </div>
   );
 }

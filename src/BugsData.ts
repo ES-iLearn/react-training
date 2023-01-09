@@ -32,8 +32,14 @@ let bugs: BugData[] = [
   {
     id: 2,
     title: "Password is readable",
-    status: BugStatus.indev,
+    status: BugStatus.reopened,
     created: new Date(2022, 7, 26),
+  },
+  {
+    id: 3,
+    title: "Login process is slow",
+    status: BugStatus.indev,
+    created: new Date(2022, 7, 28),
   },
 ];
 
